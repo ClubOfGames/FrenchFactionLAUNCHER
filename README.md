@@ -175,7 +175,7 @@ For instructions on setting up Microsoft Authentication, see https://github.com/
 
 The best way to contact the developers is on Discord.
 
-[![discord](https://discordapp.com/api/guilds/211524927831015424/embed.png?style=banner3)][discord]
+[![discord](https://discord.com/api/guilds/823156681734750258/widget.json)][discord]
 
 ---
 
