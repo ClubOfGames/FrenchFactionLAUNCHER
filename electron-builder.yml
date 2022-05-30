@@ -41,8 +41,8 @@ linux:
   target: 'AppImage'
   maintainer: 'FrenchFaction'
   vendor: 'FrenchFaction'
-  synopsis: 'L'unique Launcher de FrenchFaction !'
-  description: 'Redécouvrez l'aventure Faction de minecraft grâce à FrenchFaction !'
+  synopsis: 'L''unique Launcher de FrenchFaction !'
+  description: 'Redécouvrez l''aventure Faction de minecraft grâce à FrenchFaction !'
   category: 'Game'
 
 

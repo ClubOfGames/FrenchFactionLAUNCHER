@@ -184,7 +184,7 @@ class Util {
             return false
 
         } catch(err) {
-            throw new Error('Forge version is complex (changed).. launcher requires a patch.')
+            throw new Error('La version de Forge est complexe (modifiée). Le lanceur nécessite un correctif.')
         }
     }
 
@@ -471,7 +471,7 @@ class JavaGuard extends EventEmitter {
                 } else {
                     // Java 9+
                     if(Util.mcVersionAtLeast('1.13', this.mcVersion)){
-                        console.log('Java 9+ not yet tested.')
+                        console.log('Java 9+ pas encore testé.')
                         /* meta.version = verOb
                         ++checksum
                         if(checksum === goal){
@@ -1162,7 +1162,7 @@ class AssetGuard extends EventEmitter {
                     }
                 }
                 //We didn't find forge's version.json.
-                reject('Unable to finalize Forge processing, version.json not found! Has forge changed their format?')
+                reject('Impossible de finaliser le traitement Forge, version.json introuvable ! Forge a-t-il changé son format ?')
             })
         })
     }
@@ -1189,7 +1189,7 @@ class AssetGuard extends EventEmitter {
             if(!fs.existsSync(versionFile) || force){
                 const url = await self._getVersionDataUrl(version)
                 //This download will never be tracked as it's essential and trivial.
-                console.log('Preparing download of ' + version + ' assets.')
+                console.log('Démarrage de l\'instalation ' + version + ' et ses assets.')
                 fs.ensureDirSync(versionPath)
                 const stream = request(url).pipe(fs.createWriteStream(versionFile))
                 stream.on('finish', () => {
@@ -1271,7 +1271,7 @@ class AssetGuard extends EventEmitter {
 
             let data = null
             if(!fs.existsSync(assetIndexLoc) || force){
-                console.log('Downloading ' + versionData.id + ' asset index.')
+                console.log('Téléchargement ' + versionData.id + ' de ses assets.')
                 fs.ensureDirSync(indexPath)
                 const stream = request(assetIndex.url).pipe(fs.createWriteStream(assetIndexLoc))
                 stream.on('finish', () => {
@@ -1509,7 +1509,7 @@ class AssetGuard extends EventEmitter {
                                 return
                             }
                         }
-                        reject('No forge version manifest found!')
+                        reject('Aucun manifeste de version de forge trouvé !')
                         return
                     } else {
                         let obArtifact = ob.getArtifact()
@@ -1525,7 +1525,7 @@ class AssetGuard extends EventEmitter {
                     }
                 }
             }
-            reject('No forge module found!')
+            reject('Aucun module de forge trouvé !')
         })
     }
 
@@ -1606,11 +1606,11 @@ class AssetGuard extends EventEmitter {
             const entries = await zip.entries()
             pos = path.join(runtimeDir, Object.keys(entries)[0])
 
-            console.log('Extracting jdk..')
+            console.log('Extraction du jdk..')
             await zip.extract(null, runtimeDir)
-            console.log('Cleaning up..')
+            console.log('Nettoyage..')
             await fs.remove(zipPath)
-            console.log('Jdk extraction complete.')
+            console.log('Extraction du JDK complété !')
 
         } catch(err) {
             console.log(err)
@@ -1696,7 +1696,7 @@ class AssetGuard extends EventEmitter {
                         const contentLength = parseInt(resp.headers['content-length'])
 
                         if(contentLength !== asset.size){
-                            console.log(`WARN: Got ${contentLength} bytes for ${asset.id}: Expected ${asset.size}`)
+                            console.log(`ATTENTION: A ${contentLength} bytes pour ${asset.id}: Exception ${asset.size}`)
                             doHashCheck = true
 
                             // Adjust download
@@ -1713,9 +1713,9 @@ class AssetGuard extends EventEmitter {
                             if(doHashCheck){
                                 const v = AssetGuard._validateLocal(asset.to, asset.type != null ? 'md5' : 'sha1', asset.hash)
                                 if(v){
-                                    console.log(`Hashes match for ${asset.id}, byte mismatch is an issue in the distro index.`)
+                                    console.log(`Les hachages correspondent à ${asset.id}, la non-concordance des octets est un problème dans l'index de distribution.`)
                                 } else {
-                                    console.error(`Hashes do not match, ${asset.id} may be corrupted.`)
+                                    console.error(`Les hachages ne correspondent pas, ${asset.id} peut être corrompu.`)
                                 }
                             }
 
@@ -1727,7 +1727,7 @@ class AssetGuard extends EventEmitter {
                     } else {
 
                         req.abort()
-                        console.log(`Failed to download ${asset.id}(${typeof asset.from === 'object' ? asset.from.url : asset.from}). Response code ${resp.statusCode}`)
+                        console.log(`Échec du téléchargement ${asset.id}(${typeof asset.from === 'object' ? asset.from.url : asset.from}). Code d'erreur ${resp.statusCode}`)
                         self.progress += asset.size*1
                         self.emit('progress', 'download', self.progress, self.totaldlsize)
                         cb()
@@ -1748,9 +1748,9 @@ class AssetGuard extends EventEmitter {
             }, (err) => {
 
                 if(err){
-                    console.log('An item in ' + identifier + ' failed to process')
+                    console.log('Un élément dans ' + identifier + ' n\'a pas réussi à traiter')
                 } else {
-                    console.log('All ' + identifier + ' have been processed successfully')
+                    console.log('Tout les ' + identifier + ' ont été traités avec succès')
                 }
 
                 //self.totaldlsize -= dlTracker.dlsize
