@@ -33,20 +33,7 @@
 
 This is not an exhaustive list. Download and install the launcher to gauge all it can do!
 
-#### Need Help? [Check the wiki.][wiki]
-
 #### Like the project? Leave a ⭐ star on the repository!
-
-## Downloads
-
-You can download from [GitHub Releases](https://github.com/dscalzi/HeliosLauncher/releases)
-
-#### Latest Release
-
-[![](https://img.shields.io/github/release/dscalzi/HeliosLauncher.svg?style=flat-square)](https://github.com/dscalzi/HeliosLauncher/releases/latest)
-
-#### Latest Pre-Release
-[![](https://img.shields.io/github/release/dscalzi/HeliosLauncher/all.svg?style=flat-square)](https://github.com/dscalzi/HeliosLauncher/releases)
 
 **Supported Platforms**
 
@@ -54,10 +41,10 @@ If you download from the [Releases](https://github.com/dscalzi/HeliosLauncher/re
 
 | Platform | File |
 | -------- | ---- |
-| Windows x64 | `Helios-Launcher-setup-VERSION.exe` |
-| macOS x64 | `Helios-Launcher-setup-VERSION-x64.dmg` |
-| macOS arm64 | `Helios-Launcher-setup-VERSION-arm64.dmg` |
-| Linux x64 | `Helios-Launcher-setup-VERSION.AppImage` |
+| Windows x64 | `FrenchFaction-Launcher-setup-VERSION.exe` |
+| macOS x64 | `FrenchFaction-Launcher-setup-VERSION-x64.dmg` |
+| macOS arm64 | `FrenchFaction-Launcher-setup-VERSION-arm64.dmg` |
+| Linux x64 | `FrenchFaction-Launcher-setup-VERSION.AppImage` |
 
 ## Console
 
@@ -67,13 +54,8 @@ To open the console, use the following keybind.
 ctrl + shift + i
 ```
 
-Ensure that you have the console tab selected. Do not paste anything into the console unless you are 100% sure of what it will do. Pasting the wrong thing can expose sensitive information.
 
-#### Export Output to a File
 
-If you want to export the console output, simply right click anywhere on the console and click **Save as..**
-
-![console example](https://i.imgur.com/T5e73jP.png)
 
 
 ## Development
@@ -207,5 +189,6 @@ The best way to contact the developers is on Discord.
 [chromedebugger]: https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome 'Debugger for Chrome'
 [discord]: https://discord.gg/zNWUXdt 'Discord'
 [wiki]: https://github.com/dscalzi/HeliosLauncher/wiki 'wiki'
-[nebula]: https://github.com/dscalzi/Nebula 'dscalzi/Nebula'
-[v2branch]: https://github.com/dscalzi/HeliosLauncher/tree/ts-refactor 'v2 branch'
+
+
+Creator : dscalzi & Huhu(for the editing)
