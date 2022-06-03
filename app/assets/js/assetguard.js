@@ -471,7 +471,7 @@ class JavaGuard extends EventEmitter {
                 } else {
                     // Java 9+
                     if(Util.mcVersionAtLeast('1.13', this.mcVersion)){
-                        console.log('Java 9+ pas encore testé.')
+                        console.log('Java 9+ n\'est pas encore testé.')
                         /* meta.version = verOb
                         ++checksum
                         if(checksum === goal){
@@ -1713,7 +1713,7 @@ class AssetGuard extends EventEmitter {
                             if(doHashCheck){
                                 const v = AssetGuard._validateLocal(asset.to, asset.type != null ? 'md5' : 'sha1', asset.hash)
                                 if(v){
-                                    console.log(`Les hachages correspondent à ${asset.id}, la non-concordance des octets est un problème dans l'index de distribution.`)
+                                    console.log(`Les hachages correspondent à ${asset.id}, la non-concordance des octets à un problème dans l'index de distribution.`)
                                 } else {
                                     console.error(`Les hachages ne correspondent pas, ${asset.id} peut être corrompu.`)
                                 }
@@ -1748,7 +1748,7 @@ class AssetGuard extends EventEmitter {
             }, (err) => {
 
                 if(err){
-                    console.log('Un élément dans ' + identifier + ' n\'a pas réussi à traiter')
+                    console.log('Un élément dans ' + identifier + ' n\'a pas réussi à se traiter')
                 } else {
                     console.log('Tout les ' + identifier + ' ont été traités avec succès')
                 }

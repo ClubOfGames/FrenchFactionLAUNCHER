@@ -6,7 +6,7 @@ const logger = require('./loggerutil')('%c[ConfigManager]', 'color: #a02d2a; fon
 
 const sysRoot = process.env.APPDATA || (process.platform == 'darwin' ? process.env.HOME + '/Library/Application Support' : process.env.HOME)
 // TODO change
-const dataPath = path.join(sysRoot, '.frenchfactionlauncher')
+const dataPath = path.join(sysRoot, '.frenchfaction')
 
 // Forked processes do not have access to electron, so we have this workaround.
 const launcherDir = process.env.CONFIG_DIRECT_PATH || require('@electron/remote').app.getPath('userData')
@@ -145,7 +145,7 @@ exports.load = function(){
         } catch (err){
             logger.error(err)
             logger.log('Le fichier de configuration contient du JSON mal formé ou corrompu.')
-            logger.log('Génération d\'un nouveau fichier de configuration.')
+            logger.log('Génération d\'un nouveau fichier de configuration...')
             fs.ensureDirSync(path.join(configPath, '..'))
             config = DEFAULT_CONFIG
             exports.save()
